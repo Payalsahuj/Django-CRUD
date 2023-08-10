@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read Data</title>
+</head>
+<body>
+    <h1>Read Data</h1>
+    <ul style="border: 1px solid black; text-align: left;">
+        {% for entry in data %}
+        <div>
+            <p>Name: {{ entry.name }}</p>
+            <p> Age: {{ entry.age }}</p>
+            <p>City: {{ entry.city }}</p>
+        </div>
+            
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create' %}">Create New Entry</a><br>
+    <a href="{% url 'update' %}">Update Entry</a><br>
+    <a href="{% url 'delete' %}">Delete Entry</a><br>
+</body>
+</html>

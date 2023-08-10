@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Data</title>
+</head>
+<body>
+    <h1>Update Data</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="index">Select entry to update:</label>
+        <select name="index">
+            {% for i in data %}
+            <option value="{{ forloop.counter0 }}">{{ i.name }} - {{ i.age }} - {{ i.city }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name"><br>
+        <label for="age">Age:</label>
+        <input type="number" name="age"><br>
+        <label for="city">City:</label>
+        <input type="text" name="city"><br>
+        <button type="submit">Update Entry</button>
+    </form>
+</body>
+</html>
